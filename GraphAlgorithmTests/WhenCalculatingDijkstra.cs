@@ -75,7 +75,7 @@ namespace GraphAlgorithmTests
                     result[133].Distance,
                     result[165].Distance,
                     result[188].Distance,
-                    result[197].Distance,
+                    result[197].Distance
                 });
 
                 answer.ShouldEqual("2599,2610,2947,2052,2367,2399,2029,2442,2505,3068");
