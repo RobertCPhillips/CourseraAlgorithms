@@ -15,6 +15,7 @@ namespace GraphAlgorithms
         public bool Visited { get; set; }
         public int Distance { get; set; }
         public int Sort { get; set; }
+        public int ClusterId { get; set; }
 
         public List<Node> Incoming { get; private set; }
         public List<Node> Outgoing { get; private set; } 

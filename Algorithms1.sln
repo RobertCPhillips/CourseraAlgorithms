@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreedyAlgorithms", "GreedyA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreedyAlgorithmTests", "GreedyAlgorithmTests\GreedyAlgorithmTests.csproj", "{26B0D78F-4E9E-4E09-92BE-B99506FD019A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClusteringTests", "ClusteringTests\ClusteringTests.csproj", "{0D8BD899-10AD-4962-8811-ACEFE15788FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{26B0D78F-4E9E-4E09-92BE-B99506FD019A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26B0D78F-4E9E-4E09-92BE-B99506FD019A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26B0D78F-4E9E-4E09-92BE-B99506FD019A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D8BD899-10AD-4962-8811-ACEFE15788FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D8BD899-10AD-4962-8811-ACEFE15788FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D8BD899-10AD-4962-8811-ACEFE15788FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D8BD899-10AD-4962-8811-ACEFE15788FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,5 +105,6 @@ Global
 		{185DB7BA-FA05-4105-ACCE-A62C035C15E7} = {05886EE2-4068-4713-AE79-64E7ABF1EAFC}
 		{25564369-DCE0-4179-9054-3D619863EC1F} = {5D92B1F4-1026-4CCD-AC2B-C89F1DCFC5A7}
 		{26B0D78F-4E9E-4E09-92BE-B99506FD019A} = {5D92B1F4-1026-4CCD-AC2B-C89F1DCFC5A7}
+		{0D8BD899-10AD-4962-8811-ACEFE15788FF} = {2EC92A80-9CF8-489C-84A9-6388DD60DFFF}
 	EndGlobalSection
 EndGlobal

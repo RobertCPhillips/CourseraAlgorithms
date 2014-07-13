@@ -44,6 +44,8 @@
     <Compile Include="Dijkstra.cs" />
     <Compile Include="DijkstraGraphBuilder.cs" />
     <Compile Include="DirectedGraphBuilder.cs" />
+    <Compile Include="DistanceClustering.cs" />
+    <Compile Include="DistanceClusteringGraphBuilder.cs" />
     <Compile Include="Edge.cs" />
     <Compile Include="EdgeDirection.cs" />
     <Compile Include="Graph.cs" />
