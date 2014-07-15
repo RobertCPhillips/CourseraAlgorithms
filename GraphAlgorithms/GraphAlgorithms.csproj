@@ -51,6 +51,7 @@
     <Compile Include="Graph.cs" />
     <Compile Include="Graph2.cs" />
     <Compile Include="GraphMinimumCut.cs" />
+    <Compile Include="HammingDistanceClustering.cs" />
     <Compile Include="HwDirectedGraphBuilder.cs" />
     <Compile Include="HwDirectedGraphBuilder2.cs" />
     <Compile Include="IGraph.cs" />

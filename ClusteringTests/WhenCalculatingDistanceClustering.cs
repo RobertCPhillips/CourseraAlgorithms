@@ -6,8 +6,6 @@ namespace ClusteringTests
 {
     public class WhenCalculatingDistanceClustering
     {
-        //clustering_1_df1 - 134365 - 4 clusters
-        //clustering_1_df2 - 7 - 4 clusters
         [TestClass]
         public class WhenUsingPointsInDf01
         {
