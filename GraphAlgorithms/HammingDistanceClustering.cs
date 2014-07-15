@@ -53,28 +53,22 @@ namespace GraphAlgorithms
 
             foreach (var node in nodes)
             {
+                //i am at least my own neighbor
+                if (node.ClusterId == 0)
+                {
+                    node.ClusterId = node.Label;
+                    possibleClusters[node.ClusterId] = new HashSet<int>(new[] { node.Label });
+                    ++clusterCount;
+                }
+
                 foreach (var possibleNeighbor in possibleNeighbors)
                 {
-                    var index = node.Label ^ possibleNeighbor;
-                    var otherNode = possibleNodes[index];
+                    var possibleNeighborIndex = node.Label ^ possibleNeighbor;
+                    var otherNode = possibleNodes[possibleNeighborIndex];
                     if (otherNode == null) continue;
 
-                    //new cluster
-                    if (node.ClusterId == 0 && otherNode.ClusterId == 0)
-                    {
-                        node.ClusterId = node.Label;
-                        otherNode.ClusterId = node.ClusterId;
-                        possibleClusters[node.ClusterId] = new HashSet<int>(new[]{node.Label, otherNode.Label});
-                        ++clusterCount;
-                    }
-                    //node merges into other's cluster
-                    else if (node.ClusterId == 0)
-                    {
-                        node.ClusterId = otherNode.ClusterId;
-                        possibleClusters[otherNode.ClusterId].Add(node.Label);
-                    }
-                    //other merges into node's cluster
-                    else if (otherNode.ClusterId == 0)
+                    //add neighbor to my cluster
+                    if (otherNode.ClusterId == 0)
                     {
                         otherNode.ClusterId = node.ClusterId;
                         possibleClusters[node.ClusterId].Add(otherNode.Label);
@@ -82,29 +76,25 @@ namespace GraphAlgorithms
                     //merging clusters
                     else if (node.ClusterId != otherNode.ClusterId)
                     {
-                        //get those who have other as leader, and set those to have node as leader
-                        var otherClusterId = otherNode.ClusterId;
+                        var newLeader = possibleClusters[otherNode.ClusterId].Count > possibleClusters[node.ClusterId].Count
+                            ? otherNode.ClusterId
+                            : node.ClusterId;
 
-                        possibleClusters[otherClusterId]
+                        var oldLeader = newLeader == otherNode.ClusterId ? node.ClusterId : otherNode.ClusterId;
+
+                        //get those who have old leader, and set those to new leader
+                        possibleClusters[oldLeader]
                             .ToList()
                             .ForEach(n =>
                             {
-                                possibleNodes[n].ClusterId = node.ClusterId;
-                                possibleClusters[node.ClusterId].Add(n);
+                                possibleNodes[n].ClusterId = newLeader;
+                                possibleClusters[newLeader].Add(n);
                             });
 
-                        possibleClusters[otherClusterId] = null;
+                        possibleClusters[oldLeader] = null;
 
                         --clusterCount;
                     }
-                }
-
-                //no neighbor
-                if (node.ClusterId == 0)
-                {
-                    node.ClusterId = node.Label;
-                    possibleClusters[node.ClusterId] = new HashSet<int>(new[] { node.Label });
-                    ++clusterCount;
                 }
             }
 
