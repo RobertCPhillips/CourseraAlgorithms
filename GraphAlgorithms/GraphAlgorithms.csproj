@@ -39,6 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApSpBellmanFord.cs" />
+    <Compile Include="ApSpBellmanFordAllVertices.cs" />
+    <Compile Include="ApSpGraphBuilder.cs" />
     <Compile Include="Bfs.cs" />
     <Compile Include="Dfs.cs" />
     <Compile Include="Dijkstra.cs" />

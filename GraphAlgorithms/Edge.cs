@@ -19,7 +19,11 @@
         
         public override string ToString()
         {
-            return "Edge " + Id + " for " + Left.Label + "<->" + Right.Label + " with weight " + Weight;
+            var edgeSymbol = "<->";
+            if (Direction == EdgeDirection.LeftToRight) edgeSymbol = "->";
+            else if (Direction == EdgeDirection.RightToLeft) edgeSymbol = "<-";
+
+            return "Edge " + Id + " for " + Left.Label + edgeSymbol + Right.Label + " with weight " + Weight;
         }
     }
 }

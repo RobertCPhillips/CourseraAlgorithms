@@ -9,6 +9,7 @@ namespace GraphAlgorithms
             Label = label;
             Incoming = new List<Node>();
             Outgoing = new List<Node>();
+            IncomingEdges = new List<Edge>();
         }
 
         public int Label { get; private set; }
@@ -18,7 +19,8 @@ namespace GraphAlgorithms
         public int ClusterId { get; set; }
 
         public List<Node> Incoming { get; private set; }
-        public List<Node> Outgoing { get; private set; } 
+        public List<Node> Outgoing { get; private set; }
+        public List<Edge> IncomingEdges { get; private set; }
 
         public override string ToString()
         {
