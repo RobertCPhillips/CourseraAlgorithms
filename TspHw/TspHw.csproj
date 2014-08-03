@@ -4,24 +4,27 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6904FC08-F354-4B66-904C-FD40B8C03E8E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{8616ED6E-A68D-4BD4-B29F-31A109D264D9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DynamicAlgorithms</RootNamespace>
-    <AssemblyName>DynamicAlgorithms</AssemblyName>
+    <RootNamespace>TspHw</RootNamespace>
+    <AssemblyName>TspHw</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -39,16 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BitArrayExtensions.cs" />
-    <Compile Include="KnapsackFileReader.cs" />
-    <Compile Include="KnapsackIterativeSolver.cs" />
-    <Compile Include="KnapsackOptimizedSolver.cs" />
-    <Compile Include="KnapsackProblem.cs" />
-    <Compile Include="OptimalBstIterativeSolver.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TspFileReader.cs" />
-    <Compile Include="TspPathBitArrayGenerator.cs" />
-    <Compile Include="TspSolver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamicAlgorithms\DynamicAlgorithms.csproj">
+      <Project>{6904fc08-f354-4b66-904c-fd40b8c03e8e}</Project>
+      <Name>DynamicAlgorithms</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\DynamicAlgorithmTests\tsp\tsp_hw.txt">
+      <Link>tsp_hw.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
