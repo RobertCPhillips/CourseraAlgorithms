@@ -60,6 +60,8 @@
     <Compile Include="IGraph.cs" />
     <Compile Include="Prim.cs" />
     <Compile Include="PrimGraphBuilder.cs" />
+    <Compile Include="TwoSatGraphBuilder.cs" />
+    <Compile Include="TwoSatScc.cs" />
     <Compile Include="UndirectedGraphBuilder.cs" />
     <Compile Include="IGraphBuilder.cs" />
     <Compile Include="Node.cs" />
