@@ -80,5 +80,28 @@ namespace DynamicAlgorithmTests
                 result.ShouldEqual(1.2);
             }
         }
+
+        [TestClass]
+        public class WhenUsingExame
+        {
+            [TestMethod]
+            public void Should_calcuate_the_answer()
+            {
+                var input = new[]
+                {
+                    new[] { 1, .2 },
+                    new[] { 2, .05 },
+                    new[] { 3, .17 },
+                    new[] { 4, .1 },
+                    new[] { 5, .2 },
+                    new[] { 6, .03 },
+                    new[] { 7, .25 }
+                };
+
+                var solver = new OptimalBstIterativeSolver(input);
+                var result = solver.Solve();
+                result.ShouldEqual(2.23);
+            }
+        }
     }
 }
